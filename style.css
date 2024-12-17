@@ -1,7 +1,38 @@
+/* Pantalla de Inicio */
+#pantalla-inicio {
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
 
-/* General */
+#pantalla-inicio h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+#pantalla-inicio button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#pantalla-inicio button:hover {
+    background-color: #0056b3;
+}
+
+/* Contenedor Principal */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     color: #fff;
     overflow: hidden;
@@ -9,17 +40,18 @@ body {
 
 #contenedor-principal {
     display: flex;
-    width: 100%;
     height: 100vh;
 }
 
 .menu {
     width: 250px;
     background-color: rgba(44, 62, 80, 0.9);
-    color: #fff;
     padding: 20px;
     height: 100vh;
-    z-index: 2;
+}
+
+.menu h2 {
+    margin-bottom: 15px;
 }
 
 .menu ul {
@@ -38,21 +70,19 @@ body {
     padding-left: 5px;
 }
 
-/* Fondo dinámico */
+/* Examen - Fondo dinámico */
 #examen {
     flex-grow: 1;
-    height: 100vh;
     background-size: cover;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
 #pregunta-container {
-    text-align: center;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
+    text-align: center;
 }
