@@ -107,9 +107,15 @@ body {
     font-size: 2em;
 }
 
-#pregunta-container button {
-    padding: 10px 20px;
-    font-size: 1em;
+#opciones {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#opciones button {
+    padding: 10px;
+    margin: 5px 0;
     background-color: #27ae60;
     color: #fff;
     border: none;
@@ -118,7 +124,7 @@ body {
     transition: background 0.3s ease;
 }
 
-#pregunta-container button:hover {
+#opciones button:hover {
     background-color: #2ecc71;
 }
 
