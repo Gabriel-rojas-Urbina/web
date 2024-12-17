@@ -1,14 +1,15 @@
-const contenedorInicio = document.getElementById("pantalla-inicio");
+
+const pantallaInicio = document.getElementById("pantalla-inicio");
 const contenedorPrincipal = document.getElementById("contenedor-principal");
 const contenedorExamen = document.getElementById("examen");
 const preguntaElemento = document.getElementById("pregunta");
 
 // Preguntas por curso
 const preguntas = {
-    matematicas: ["¿Cuánto es 2 + 2?", "¿Qué número sigue al 6?"],
-    quimica: ["¿Cuál es la fórmula del agua?", "¿Qué elemento es SO₂?"],
-    biologia: ["¿Qué estudia la biología?", "¿Qué es una célula?"],
-    historia: ["¿Quién proclamó la independencia del Perú?", "¿En qué año fue la independencia?"],
+    matematicas: ["¿Cuánto es 2 + 2?", "¿Qué número sigue al 6?", "¿Cuánto es 5 x 3?"],
+    quimica: ["¿Cuál es la fórmula del agua?", "¿Qué elemento es SO₂?", "¿Qué es un átomo?"],
+    biologia: ["¿Qué estudia la biología?", "¿Qué es una célula?", "¿Qué es la fotosíntesis?"],
+    historia: ["¿Quién proclamó la independencia del Perú?", "¿En qué año fue la independencia?", "¿Quién fue Simón Bolívar?"],
 };
 
 let indicePregunta = 0;
@@ -16,7 +17,7 @@ let cursoActual = "";
 
 // Función para iniciar el test
 function iniciarTest() {
-    contenedorInicio.style.display = "none";
+    pantallaInicio.style.display = "none";
     contenedorPrincipal.style.display = "flex";
 }
 
@@ -25,22 +26,14 @@ function cambiarCurso(curso) {
     cursoActual = curso;
     indicePregunta = 0;
 
-    // Cambiar la imagen de fondo
-    switch (curso) {
-        case "matematicas":
-            contenedorExamen.style.backgroundImage = "url('matematicas.jpg')";
-            break;
-        case "quimica":
-            contenedorExamen.style.backgroundImage = "url('quimica.jpg')";
-            break;
-        case "biologia":
-            contenedorExamen.style.backgroundImage = "url('biologia.jpg')";
-            break;
-        case "historia":
-            contenedorExamen.style.backgroundImage = "url('historia.jpg')";
-            break;
-    }
+    const fondos = {
+        matematicas: "matematicas.jpg",
+        quimica: "quimica.jpg",
+        biologia: "biologia.jpg",
+        historia: "historia.jpg",
+    };
 
+    contenedorExamen.style.backgroundImage = `url('${fondos[curso]}')`;
     mostrarPregunta();
 }
 
@@ -49,8 +42,13 @@ function mostrarPregunta() {
     const listaPreguntas = preguntas[cursoActual];
     if (indicePregunta < listaPreguntas.length) {
         preguntaElemento.textContent = listaPreguntas[indicePregunta];
-        indicePregunta++;
     } else {
         preguntaElemento.textContent = "¡Has completado el test!";
     }
+}
+
+// Función para avanzar a la siguiente pregunta
+function siguientePregunta() {
+    indicePregunta++;
+    mostrarPregunta();
 }
