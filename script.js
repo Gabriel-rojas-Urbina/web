@@ -1,4 +1,3 @@
-
 const pantallaInicio = document.getElementById("pantalla-inicio");
 const contenedorPrincipal = document.getElementById("contenedor-principal");
 const cursoImagen = document.getElementById("curso-imagen");
