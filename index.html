@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,20 +28,63 @@
         </aside>
 
         <!-- Contenido Principal -->
-        <main>
-            <header>
-                <h1 id="titulo-curso">Selecciona un Test</h1>
-                <p id="descripcion-curso">Elige un curso para ver las preguntas.</p>
-            </header>
-
-            <!-- Contenedor de Examen -->
-            <section id="examen">
-                <img id="imagen-test" src="placeholder.jpg" alt="Imagen del Test" />
-                <h2 id="pregunta">Aquí aparecerá la pregunta</h2>
-            </section>
-        </main>
+        <section id="examen">
+            <h2 id="pregunta">Aquí aparecerá la pregunta</h2>
+        </section>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        const contenedorExamen = document.getElementById("examen");
+        const preguntaElemento = document.getElementById("pregunta");
+        const preguntas = {
+            matematicas: ["¿Cuánto es 2 + 2?", "¿Qué número es par?"],
+            quimica: ["¿Cuál es la fórmula del agua?", "¿Qué elemento es SO₂?"],
+            biologia: ["¿Qué estudia la biología?", "¿Qué es una célula?"],
+            historia: ["¿Quién proclamó la independencia del Perú?", "¿En qué año fue la independencia?"],
+        };
+
+        let indicePregunta = 0;
+        let cursoActual = "";
+
+        function iniciarSimulador() {
+            document.getElementById("introduccion").style.display = "none";
+            document.getElementById("contenedor-principal").style.display = "flex";
+        }
+
+        function cambiarCurso(curso) {
+            cursoActual = curso;
+            indicePregunta = 0;
+
+            // Cambiar fondo dinámicamente
+            switch (curso) {
+                case "matematicas":
+                    contenedorExamen.style.backgroundImage = "url('matematicas.jpg')";
+                    break;
+                case "quimica":
+                    contenedorExamen.style.backgroundImage = "url('quimica.jpg')";
+                    break;
+                case "biologia":
+                    contenedorExamen.style.backgroundImage = "url('biologia.jpg')";
+                    break;
+                case "historia":
+                    contenedorExamen.style.backgroundImage = "url('historia.jpg')";
+                    break;
+            }
+
+            contenedorExamen.style.backgroundSize = "cover";
+            contenedorExamen.style.backgroundPosition = "center";
+            mostrarPregunta();
+        }
+
+        function mostrarPregunta() {
+            const listaPreguntas = preguntas[cursoActual];
+            if (indicePregunta < listaPreguntas.length) {
+                preguntaElemento.textContent = listaPreguntas[indicePregunta];
+                indicePregunta++;
+            } else {
+                preguntaElemento.textContent = "¡Has completado el test!";
+            }
+        }
+    </script>
 </body>
 </html>
