@@ -1,5 +1,9 @@
+const contenedorInicio = document.getElementById("pantalla-inicio");
+const contenedorPrincipal = document.getElementById("contenedor-principal");
 const contenedorExamen = document.getElementById("examen");
 const preguntaElemento = document.getElementById("pregunta");
+
+// Preguntas por curso
 const preguntas = {
     matematicas: ["¿Cuánto es 2 + 2?", "¿Qué número sigue al 6?"],
     quimica: ["¿Cuál es la fórmula del agua?", "¿Qué elemento es SO₂?"],
@@ -10,15 +14,18 @@ const preguntas = {
 let indicePregunta = 0;
 let cursoActual = "";
 
-function iniciarSimulador() {
-    document.getElementById("introduccion").style.display = "none";
-    document.getElementById("contenedor-principal").style.display = "flex";
+// Función para iniciar el test
+function iniciarTest() {
+    contenedorInicio.style.display = "none";
+    contenedorPrincipal.style.display = "flex";
 }
 
+// Función para cambiar de curso y fondo
 function cambiarCurso(curso) {
     cursoActual = curso;
     indicePregunta = 0;
 
+    // Cambiar la imagen de fondo
     switch (curso) {
         case "matematicas":
             contenedorExamen.style.backgroundImage = "url('matematicas.jpg')";
@@ -33,9 +40,11 @@ function cambiarCurso(curso) {
             contenedorExamen.style.backgroundImage = "url('historia.jpg')";
             break;
     }
+
     mostrarPregunta();
 }
 
+// Función para mostrar preguntas
 function mostrarPregunta() {
     const listaPreguntas = preguntas[cursoActual];
     if (indicePregunta < listaPreguntas.length) {
