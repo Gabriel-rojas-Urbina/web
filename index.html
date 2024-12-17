@@ -10,14 +10,12 @@
 <body>
     <!-- Pantalla de Inicio -->
     <div id="pantalla-inicio">
-        <h1>Test de IQ</h1>
-        <p>Evalúa tu conocimiento seleccionando el test de tu preferencia</p>
-        <button onclick="iniciarTest()">Comenzar</button>
+        <h1 class="titulo-animado">¿Listo para el Test de IQ?</h1>
+        <button onclick="iniciarTest()" class="boton-animado">Comenzar</button>
     </div>
 
     <!-- Contenedor Principal -->
     <div id="contenedor-principal" style="display: none;">
-        <!-- Menú Lateral -->
         <aside class="menu">
             <h2>Elige tu Test</h2>
             <ul>
@@ -28,13 +26,13 @@
             </ul>
         </aside>
 
-        <!-- Contenido Principal -->
         <section id="examen">
             <div id="pregunta-container">
-                <h2 id="pregunta">Selecciona un test para comenzar</h2>
+                <img id="curso-imagen" src="" alt="Imagen del Curso">
+                <h2 id="pregunta">Selecciona un curso para iniciar</h2>
                 <div id="opciones"></div>
-                <button onclick="siguientePregunta()">Siguiente Pregunta</button>
             </div>
+            <div id="resultado" style="display: none;">Respuesta Correcta!</div>
         </section>
     </div>
 
