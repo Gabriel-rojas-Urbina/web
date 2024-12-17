@@ -1,11 +1,9 @@
-const tituloCurso = document.getElementById("titulo-curso");
-const descripcionCurso = document.getElementById("descripcion-curso");
+
 const contenedorExamen = document.getElementById("examen");
 const preguntaElemento = document.getElementById("pregunta");
-
 const preguntas = {
-    matematicas: ["¿Cuánto es 2 + 2?", "¿Qué número es par?"],
-    quimica: ["¿Cuál es la fórmula del agua?", "¿Qué es el SO₂?"],
+    matematicas: ["¿Cuánto es 2 + 2?", "¿Qué número sigue al 6?"],
+    quimica: ["¿Cuál es la fórmula del agua?", "¿Qué elemento es SO₂?"],
     biologia: ["¿Qué estudia la biología?", "¿Qué es una célula?"],
     historia: ["¿Quién proclamó la independencia del Perú?", "¿En qué año fue la independencia?"],
 };
@@ -13,7 +11,11 @@ const preguntas = {
 let indicePregunta = 0;
 let cursoActual = "";
 
-// Cambiar curso y actualizar fondo
+function iniciarSimulador() {
+    document.getElementById("introduccion").style.display = "none";
+    document.getElementById("contenedor-principal").style.display = "flex";
+}
+
 function cambiarCurso(curso) {
     cursoActual = curso;
     indicePregunta = 0;
@@ -21,26 +23,17 @@ function cambiarCurso(curso) {
     switch (curso) {
         case "matematicas":
             contenedorExamen.style.backgroundImage = "url('matematicas.jpg')";
-            tituloCurso.textContent = "🧮 Test de Matemáticas";
-            descripcionCurso.textContent = "Responde preguntas básicas de matemáticas.";
             break;
         case "quimica":
             contenedorExamen.style.backgroundImage = "url('quimica.jpg')";
-            tituloCurso.textContent = "⚗️ Test de Química";
-            descripcionCurso.textContent = "Responde preguntas sobre conceptos básicos de química.";
             break;
         case "biologia":
             contenedorExamen.style.backgroundImage = "url('biologia.jpg')";
-            tituloCurso.textContent = "🔬 Test de Biología";
-            descripcionCurso.textContent = "Explora preguntas básicas de biología.";
             break;
         case "historia":
             contenedorExamen.style.backgroundImage = "url('historia.jpg')";
-            tituloCurso.textContent = "📜 Test de Historia del Perú";
-            descripcionCurso.textContent = "Responde preguntas sobre la independencia del Perú.";
             break;
     }
-
     mostrarPregunta();
 }
 
