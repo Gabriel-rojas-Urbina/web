@@ -4,7 +4,7 @@ function iniciarSimulador() {
     document.getElementById("contenedor-principal").style.display = "flex";
 }
 
-// Cambiar curso y actualizar imagen
+// Cambiar curso y actualizar la imagen y contenido
 function cambiarCurso(curso) {
     const tituloCurso = document.getElementById("titulo-curso");
     const descripcionCurso = document.getElementById("descripcion-curso");
@@ -30,6 +30,11 @@ function cambiarCurso(curso) {
             tituloCurso.textContent = "📜 Test de Historia del Perú";
             descripcionCurso.textContent = "Responde preguntas sobre la historia del Perú.";
             imagenTest.src = "historia.jpg";
+            break;
+        default:
+            tituloCurso.textContent = "Selecciona un Test";
+            descripcionCurso.textContent = "Elige un curso para ver las preguntas.";
+            imagenTest.src = "placeholder.jpg";
             break;
     }
 }
