@@ -1,18 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Exámenes</title>
+    <title>Test de IQ</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Pantalla de Introducción -->
-    <div id="introduccion">
-        <h1>Bienvenido al Test de Sabiduría</h1>
-        <p>Selecciona un curso para comenzar tu prueba.</p>
-        <button onclick="iniciarSimulador()">Comenzar</button>
+    <!-- Pantalla de Inicio -->
+    <div id="pantalla-inicio">
+        <h1>Test de IQ</h1>
+        <button onclick="iniciarTest()">Comenzar</button>
     </div>
 
     <!-- Contenedor Principal -->
@@ -28,10 +26,10 @@
             </ul>
         </aside>
 
-        <!-- Contenedor del Examen -->
+        <!-- Contenido Principal -->
         <section id="examen">
             <div id="pregunta-container">
-                <h2 id="pregunta">Aquí aparecerá la pregunta</h2>
+                <h2 id="pregunta">Selecciona un test para comenzar</h2>
             </div>
         </section>
     </div>
