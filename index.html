@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Exámenes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Pantalla de Introducción -->
+    <div id="introduccion">
+        <h1>Bienvenido al Test de Sabiduría</h1>
+        <p>Selecciona un curso para comenzar tu prueba.</p>
+        <button onclick="iniciarSimulador()">Comenzar</button>
+    </div>
+
+    <!-- Contenedor Principal -->
+    <div id="contenedor-principal" style="display: none;">
+        <!-- Menú Lateral -->
+        <aside class="menu">
+            <h2>Elige tu Test</h2>
+            <ul>
+                <li onclick="cambiarCurso('matematicas')">🧮 Test de Matemáticas</li>
+                <li onclick="cambiarCurso('quimica')">⚗️ Test de Química</li>
+                <li onclick="cambiarCurso('biologia')">🔬 Test de Biología</li>
+                <li onclick="cambiarCurso('historia')">📜 Historia del Perú</li>
+            </ul>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main>
+            <header>
+                <h1 id="titulo-curso">Selecciona un Test</h1>
+                <p id="descripcion-curso">Elige un curso para ver las preguntas.</p>
+            </header>
+
+            <!-- Contenedor de Examen -->
+            <section id="examen">
+                <img id="imagen-test" src="imagenes/quimica.jpg" alt="Imagen del Test">
+                <h2 id="pregunta">Aquí aparecerá la pregunta</h2>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

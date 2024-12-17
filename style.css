@@ -1,0 +1,96 @@
+/* General */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Pantalla de Introducción */
+#introduccion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#introduccion h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+#introduccion button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#introduccion button:hover {
+    background-color: #0056b3;
+}
+
+/* Menú Lateral */
+.menu {
+    width: 250px;
+    background-color: #2C3E50;
+    color: #FFF;
+    padding: 20px;
+    height: 100vh;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.menu h2 {
+    margin-bottom: 10px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.menu ul li:hover {
+    background-color: #34495E;
+    padding-left: 5px;
+}
+
+/* Contenido Principal */
+main {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#examen {
+    text-align: center;
+}
+
+#imagen-test {
+    width: 300px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
