@@ -1,15 +1,16 @@
+
 /* General */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     color: #fff;
+    overflow: hidden;
 }
 
 #contenedor-principal {
     display: flex;
     width: 100%;
     height: 100vh;
-    position: relative;
 }
 
 .menu {
@@ -18,7 +19,6 @@ body {
     color: #fff;
     padding: 20px;
     height: 100vh;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
     z-index: 2;
 }
 
@@ -40,33 +40,19 @@ body {
 
 /* Fondo dinámico */
 #examen {
-    width: 100%;
-    height: 100%;
+    flex-grow: 1;
+    height: 100vh;
     background-size: cover;
     background-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
-#examen h2 {
-    z-index: 3;
-    font-size: 2em;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-#pregunta {
-    font-size: 1.5em;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
+#pregunta-container {
     text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
 }
