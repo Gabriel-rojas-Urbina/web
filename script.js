@@ -1,4 +1,3 @@
-
 const contenedorExamen = document.getElementById("examen");
 const preguntaElemento = document.getElementById("pregunta");
 const preguntas = {
