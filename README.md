@@ -34,4 +34,6 @@ Este proyecto es una página web interactiva que permite a los usuarios realizar
 - **HTML5**: Estructura del sitio web.  
 - **CSS3**: Estilos y animaciones.  
 - **JavaScript**: Interactividad y lógica del test.
+
+
 ELABORADO POR: Gabriel Rojas y Marcelo Aliaga
